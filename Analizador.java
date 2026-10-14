@@ -68,7 +68,7 @@ public class Analizador {
             }
 
             // Shift
-            if (accion.startsWith("S")) {
+            if (accion.startsWith("s")) {
                 int siguienteEstado;
 
                 try {
@@ -94,7 +94,7 @@ public class Analizador {
             }
 
             // REDUCE
-            else if (accion.startsWith("R")) {
+            else if (accion.startsWith("r")) {
                 int numeroProduccion;
 
                 try {
