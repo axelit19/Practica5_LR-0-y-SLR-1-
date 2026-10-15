@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         Analizador analizador = new Analizador();
 
-        int opcion;
+        int opcion = 0;
 
         do {
             System.out.println("\n===== ANALIZADOR SLR(1) =====");
