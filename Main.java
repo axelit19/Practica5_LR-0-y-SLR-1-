@@ -13,7 +13,8 @@ public class Main {
         do {
             System.out.println("\n===== ANALIZADOR SLR(1) =====");
             System.out.println("1. Analizar cadena");
-            System.out.println("2. Salir");
+            System.out.println("2. Ejecutar pruebas");
+            System.out.println("3. Salir");
             System.out.print("Seleccione una opcion: ");
 
             if (!scanner.hasNextInt()) {
@@ -48,6 +49,10 @@ public class Main {
                     break;
 
                 case 2:
+                    Pruebas.ejecutar();
+                    break;
+
+                case 3:
                     System.out.println("Saliendo del programa...");
                     break;
 
@@ -56,7 +61,7 @@ public class Main {
                     break;
             }
 
-        } while (opcion != 2);
+        } while (opcion != 3);
 
         scanner.close();
     }
