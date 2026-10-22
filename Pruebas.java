@@ -7,7 +7,7 @@ public class Pruebas {
         String[][] pruebas = {
 
             // Válidas
-            {"id", ";;"},
+            {"num", ";;"},
             {"num", "+", "num", ";;"},
             {"num", "*", "num", ";;"},
             {"if", "bool", "then", "num", "else", "num", ";;"},
