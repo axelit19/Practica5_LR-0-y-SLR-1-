@@ -27,6 +27,7 @@ public class AnalizadorLALR {
     }
 
     private void inicializarProducciones() {
+        producciones.put(0, new Produccion("S'", 1)); // S' -> S
         producciones.put(1, new Produccion("S'", 3)); // S -> L=R
         producciones.put(2, new Produccion("S", 1));  // S -> R
         //CAMBIAR AQUI POR  SI D ES PAR O IMPAR
