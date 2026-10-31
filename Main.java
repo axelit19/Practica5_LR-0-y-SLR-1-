@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Analizador analizador = new Analizador();
+        AnalizadorLALR analizador = new AnalizadorLALR();
 
         int opcion = 0;
 

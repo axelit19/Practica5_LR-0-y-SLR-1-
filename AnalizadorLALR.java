@@ -28,11 +28,9 @@ public class AnalizadorLALR {
 
     private void inicializarProducciones() {
         producciones.put(0, new Produccion("S'", 1)); // S' -> S
-        producciones.put(1, new Produccion("S'", 3)); // S -> L=R
+        producciones.put(1, new Produccion("S", 3)); // S -> L=R
         producciones.put(2, new Produccion("S", 1));  // S -> R
-        //CAMBIAR AQUI POR  SI D ES PAR O IMPAR
-        //producciones.put(3, new Produccion("L", 2));  // L -> *R
-        //producciones.put(3, new Produccion("L", 2)); // L -> & R
+        producciones.put(3, new Produccion("L", 2));  // L -> *R
         producciones.put(4, new Produccion("L", 1));  // L -> id
         producciones.put(5, new Produccion("R", 1));  // R -> L
 
@@ -41,6 +39,90 @@ public class AnalizadorLALR {
 
     private void inicializarTablas() {
         //Tabla de la Gramatica 
+        //Estado 0
+        Map<String, String> action0 = new HashMap<>();
+        Map<String, Integer> goto0 = new HashMap<>();
+        action0.put("*", "s4");
+        action0.put("id", "s5");
+        goto0.put("S", 1);
+        goto0.put("L", 2);
+        goto0.put("R", 3);
+        ACTION.put(0, action0);
+        GOTO.put(0, goto0);
+
+        // Estado 1
+        Map<String, String> action1 = new HashMap<>();
+        Map<String, Integer> goto1 = new HashMap<>();
+        action1.put("$", "ACC");
+        ACTION.put(1, action1);
+        GOTO.put(1, goto1);
+
+        //Estado 2
+        Map<String, String> action2 = new HashMap<>();
+        Map<String, Integer> goto2 = new HashMap<>();
+        action2.put("=", "s6");
+        action2.put("$", "r5");
+        ACTION.put(2, action2);
+        GOTO.put(2, goto2);
+
+        //Estado 3
+        Map<String, String> action3 = new HashMap<>();
+        Map<String, Integer> goto3 = new HashMap<>();
+        action3.put("$", "r2");
+        ACTION.put(3, action3);
+        GOTO.put(3, goto3);
+
+        //Estado 4
+        Map<String, String> action4 = new HashMap<>();
+        Map<String, Integer> goto4 = new HashMap<>();
+        action4.put("*", "s4");
+        action4.put("id", "s5");
+        goto4.put("L", 8);
+        goto4.put("R", 7);
+        ACTION.put(4, action4);
+        GOTO.put(4, goto4);
+
+        //Estado 5
+        Map<String, String> action5 = new HashMap<>();
+        Map<String, Integer> goto5 = new HashMap<>();
+        action5.put("$", "r4");
+        action5.put("=", "r4");
+        ACTION.put(5, action5);
+        GOTO.put(5, goto5);
+
+        //Estado 6
+        Map<String, String> action6 = new HashMap<>();
+        Map<String, Integer> goto6 = new HashMap<>();
+        action6.put("*", "s4");
+        action6.put("id", "s5");
+        goto6.put("L", 8);
+        goto6.put("R", 9);
+        ACTION.put(6, action6);
+        GOTO.put(6, goto6);
+
+        //Estado 7
+        Map<String, String> action7 = new HashMap<>();
+        Map<String, Integer> goto7 = new HashMap<>();
+        action7.put("$", "r3");
+        action7.put("=", "r3");
+        ACTION.put(7, action7);
+        GOTO.put(7, goto7);
+
+        //Estado 8
+        Map<String, String> action8 = new HashMap<>();
+        Map<String, Integer> goto8 = new HashMap<>();
+        action8.put("$", "r5");
+        action8.put("=", "r5");
+        ACTION.put(8, action8);
+        GOTO.put(8, goto8);
+
+        //Estado 9
+        Map<String, String> action9 = new HashMap<>();
+        Map<String, Integer> goto9 = new HashMap<>();
+        action9.put("$", "r1");
+        ACTION.put(9, action9);
+        GOTO.put(9, goto9);
+
     }
 
 
